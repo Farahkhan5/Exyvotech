@@ -1,0 +1,280 @@
+/* about.css - Modern About Agency Section Styles */
+/* Unique class names to avoid conflicts with other sections */
+
+.about-agency-wrapper {
+    width: 100%;
+    background: #000000;
+    padding: 5rem 0;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Subtle background glow effect */
+.about-agency-wrapper::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at 20% 50%, rgba(255, 59, 59, 0.08), transparent 70%);
+    pointer-events: none;
+}
+
+.about-agency-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.about-agency-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4rem;
+}
+
+/* LEFT SIDE STYLES */
+.about-left {
+    flex: 1.2;
+    min-width: 280px;
+}
+
+.about-subtitle {
+    color: #ff6b1e;
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 1.5rem;
+    display: inline-block;
+    border-left: 3px solid #ff6b1e;
+    padding-left: 1rem;
+}
+
+.about-headline {
+    font-size: 3.2rem;
+    font-weight: 800;
+    line-height: 1.2;
+    color: #ffffff;
+    margin-bottom: 1.8rem;
+}
+
+.about-headline .highlight-red {
+    color: #ff6b1e;
+    position: relative;
+    display: inline-block;
+}
+
+.about-headline .highlight-red::after {
+    content: '';
+    position: absolute;
+    bottom: 8px;
+    left: 0;
+    width: 100%;
+    height: 8px;
+    background: rgba(255, 59, 59, 0.25);
+    z-index: -1;
+}
+
+.about-description {
+    color: #a0a0a0;
+    font-size: 1rem;
+    line-height: 1.7;
+    margin-bottom: 2rem;
+    max-width: 500px;
+}
+
+.about-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    background: #ff6b1e;
+    color: white;
+    border: none;
+    padding: 0.9rem 2rem;
+    border-radius: 40px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.about-btn:hover {
+    background: #e05a10;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(255, 59, 59, 0.3);
+    color: white;
+}
+
+/* RIGHT SIDE - TIMELINE STYLES */
+.about-right {
+    flex: 1.3;
+    min-width: 300px;
+    position: relative;
+}
+
+/* Vertical timeline line */
+.about-timeline {
+    position: relative;
+    padding-left: 2.5rem;
+}
+
+.about-timeline::before {
+    content: '';
+    position: absolute;
+    left: 16px;
+    top: 12px;
+    bottom: 12px;
+    width: 2px;
+    background: linear-gradient(to bottom, #ff6b1e, rgba(255, 59, 59, 0.3), #ff6b1e);
+    border-radius: 2px;
+}
+
+/* Individual timeline item */
+.about-timeline-item {
+    position: relative;
+    margin-bottom: 2.5rem;
+    padding-left: 2rem;
+}
+
+.about-timeline-item:last-child {
+    margin-bottom: 0;
+}
+
+/* Icon with red square background */
+.about-icon-box {
+    position: absolute;
+    left: -2.8rem;
+    top: 0;
+    width: 48px;
+    height: 48px;
+    background: #ff6b1e;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 15px rgba(255, 59, 59, 0.3);
+    transition: all 0.3s ease;
+}
+
+.about-timeline-item:hover .about-icon-box {
+    transform: scale(1.05);
+    box-shadow: 0 6px 20px rgba(255, 59, 59, 0.4);
+}
+
+.about-icon-box i {
+    font-size: 1.4rem;
+    color: white;
+}
+
+/* Content styles */
+.about-item-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 0.6rem;
+}
+
+.about-item-desc {
+    font-size: 0.9rem;
+    color: #a0a0a0;
+    line-height: 1.6;
+    margin-bottom: 0;
+}
+
+/* Glow effect for timeline items on hover */
+.about-timeline-item:hover .about-item-title {
+    color: #ff6b1e;
+    transition: color 0.3s ease;
+}
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 992px) {
+    .about-agency-grid {
+        flex-direction: column;
+        gap: 2.5rem;
+    }
+    
+    .about-left {
+        text-align: center;
+    }
+    
+    .about-subtitle {
+        border-left: none;
+        border-bottom: 2px solid #ff6b1e;
+        padding-left: 0;
+        padding-bottom: 0.5rem;
+    }
+    
+    .about-description {
+        max-width: 100%;
+    }
+    
+    .about-headline {
+        font-size: 2.5rem;
+    }
+    
+    .about-timeline {
+        padding-left: 2rem;
+    }
+    
+    .about-timeline::before {
+        left: 12px;
+    }
+    
+    .about-icon-box {
+        left: -2rem;
+        width: 42px;
+        height: 42px;
+    }
+    
+    .about-icon-box i {
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .about-agency-wrapper {
+        padding: 3rem 0;
+    }
+    
+    .about-agency-container {
+        padding: 0 1.2rem;
+    }
+    
+    .about-headline {
+        font-size: 1.8rem;
+    }
+    
+    .about-headline .highlight-red::after {
+        bottom: 4px;
+        height: 6px;
+    }
+    
+    .about-timeline {
+        padding-left: 1.5rem;
+    }
+    
+    .about-timeline::before {
+        left: 8px;
+    }
+    
+    .about-icon-box {
+        left: -1.5rem;
+        width: 36px;
+        height: 36px;
+    }
+    
+    .about-icon-box i {
+        font-size: 1rem;
+    }
+    
+    .about-item-title {
+        font-size: 1.1rem;
+    }
+    
+    .about-item-desc {
+        font-size: 0.8rem;
+    }
+}
